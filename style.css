@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: black;
+}
+
+.container{
+    width: 100%;
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template: "1fr 1fr 1fr 1fr 1fr" 33.33vh
+                    "1fr 1fr 1fr 1fr 1fr" 33.33vh
+                    "1fr 1fr 1fr 1fr 1fr" 33.33vh;
+    grid-gap: 2px;
+}
+
+section {
+    padding: 20px;
+    width: 1280px;
+    margin: 40px auto;
+}
+
+section ul{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+section ul li{
+    list-style: none;
+    background: #eee;
+    padding: 8px 20px;
+    margin: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+section ul li.active{
+    background-color: #03a9f4;
+    color: #fff;
+}
+
+.container .box{
+    position: relative;
+    background: #ccc;
+}
+
+.container .box img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .box.a{
+    grid-row: span 2;
+}
+
+.container .box.b,
+.container .box.f,
+.container .box.h,
+.container .box.j
+{
+    grid-column: span 2;
+}
+
+@media(max-width: 991px){
+    .container{
+        grid-template: "1fr 1fr 1fr "250px 
+                          "1fr 1fr 1fr "250px 
+                          "1fr 1fr 1fr "250px
+                          "1fr 1fr 1fr "250px 
+                          "1fr 1fr 1fr "250px ;
+
+    }
+}
+
+@media(max-width: 768px){
+    .container{
+        grid-template: "1fr 1fr"200px 
+                          "1fr 1fr"200px 
+                          "1fr 1fr"200px
+                          "1fr 1fr"200px 
+                          "1fr 1fr"200px 
+                          "1fr 1fr"200px 
+                          "1fr 1fr"200px ;
+
+    }
+    .container .box .h{
+        grid-column: span 1;
+    }
+}
+
